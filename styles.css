@@ -1,17 +1,13 @@
+/* General Styles */
 body {
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Urbanist', sans-serif !important;
     background-color: #ffeef7;
     color: #333;
     text-align: center;
     padding: 20px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a, button {
-    font-family: 'Urbanist', sans-serif !important;
-}
-
-
-
+/* Navbar */
 .navbar {
     background-color: #ffb6c1;
     padding: 15px;
@@ -22,7 +18,14 @@ body, h1, h2, h3, h4, h5, h6, p, a, button {
     font-size: 1.8rem;
     font-weight: bold;
     color: white !important;
-    letter-spacing: 2px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav {
+    text-align: center;
 }
 
 .navbar-nav .nav-link {
@@ -36,25 +39,29 @@ body, h1, h2, h3, h4, h5, h6, p, a, button {
     color: #ffd6e0 !important;
 }
 
+/* Header */
 h1 {
     font-size: 2.8rem;
     font-weight: 700;
     color: #ff6b81;
     margin-bottom: 30px;
     letter-spacing: 4px;
-    text-transform: none;
 }
 
 .card-container {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     justify-content: center;
-    margin-top: 20px;
+    gap: 25px;
 }
 
+
+
+/* Card Styling */
 .card {
-    width: 18rem;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -74,6 +81,7 @@ h1 {
     border-top-right-radius: 15px;
     height: 200px;
     object-fit: cover;
+    width: 100%;
 }
 
 .card-body {
@@ -94,6 +102,7 @@ h1 {
     line-height: 1.5;
 }
 
+/* Hover Effect */
 .hover-info {
     position: absolute;
     bottom: 0;
@@ -111,9 +120,44 @@ h1 {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
+/* ✅ Responsive Styles for All Devices */
+@media (max-width: 1024px) { /* Tablets & Small Laptops */
     .card-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile Phones */
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 769px) {
+    .card-container:has(.card:last-child:nth-child(odd)) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
