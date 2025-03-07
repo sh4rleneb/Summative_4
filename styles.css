@@ -1,25 +1,56 @@
 body {
-    font-family: 'Urbanist', Helvetica Neue, Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Urbanist', sans-serif;
+    background-color: #ffeef7;
     color: #333;
     text-align: center;
     padding: 20px;
 }
 
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+    font-family: 'Urbanist', sans-serif !important;
+}
+
+
+
+.navbar {
+    background-color: #ffb6c1;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white !important;
+    letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd6e0 !important;
+}
+
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #ff6b81;
     margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    text-transform: none;
 }
 
 .card-container {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .card {
@@ -30,6 +61,7 @@ h1 {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: white;
     overflow: hidden;
+    position: relative;
 }
 
 .card:hover {
@@ -50,7 +82,7 @@ h1 {
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #d63384;
     margin-bottom: 10px;
@@ -60,6 +92,23 @@ h1 {
     font-size: 1rem;
     color: #555;
     line-height: 1.5;
+}
+
+.hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 182, 193, 0.9);
+    color: white;
+    font-size: 0.9rem;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .hover-info {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
